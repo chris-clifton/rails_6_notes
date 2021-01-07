@@ -21,3 +21,9 @@ assert_select 'h2', 'Programming Ruby 1.9'
 assert_select '.price', /\$[,\d]+\.\d\d/
 ```
 
+# render
+page 153 && views/carts/show.html.erb - line 7
+- The `render()` method will iterate over any collection thats passed to it
+
+# generate action cable channel
+`rails generate channel products`
