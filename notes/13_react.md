@@ -132,3 +132,23 @@ The event passed is a **synthetic event** which has a property `target` that is 
 
 Since a React component is a view and state, when the state changes, we need to rerender the view
 - Since we want the view to be rerendered when the user changes payment types, we need to get the currently selected payment type into the component's state
+- Inside `render()` we can examine the value of state and we want to make a component for each pay type
+
+**React components must have a single stop-level element**
+- Wrap the whole thing in a `div`
+- Due to the way our CSS works, each line of our form must be inside another `div` with the CSS class `field`
+
+# Wrapping up WEbpack and React
+- Webpacker exists to help us with complex interactions like the one we just implemented with React
+- Webpacker removes uninteresting decisions, like where files should go, and proides a basic mechanism that just works so we can spend time on our problem and not on configuration
+
+# Testing our JavaScript functionality
+Testing our new JS functionality involves a lot of steps:
+- visit the store, select an item, add it to the cart, click checkout, fill in a few fields, and selecting a payment type
+
+From a testing perspective, we're going to need both a rails server and a browser. To accomplish this, Rails makes use of a version of Chrome called ChromeDriver, which has been augmented to include programming interfaces to enable automation, and Capybara, which is a tool that drives this automation.
+
+Tests that pull together a complete and integrated version of the software are called system tests, and thats what we'll be doing- creating a full end-to-end scenario with a web browser, web server, our application, and a database.
+
+When we created scaffolds in previous chapters, Rails created system tests for us that perfomed basic tests
+- Run these with `rails test:system`
